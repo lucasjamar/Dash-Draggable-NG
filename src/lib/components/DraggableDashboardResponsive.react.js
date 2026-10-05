@@ -54,7 +54,8 @@ const defaultItemLayout = (item_layout, id, key, ncols, max_cols) => {
  * `Input("<my-id>", "layout")`.
  */
 export default class DraggableDashboardResponsive extends Component {
-    componentWillMount() {
+    constructor(props) {
+        super(props);
         let {children = []} = this.props;
         const {
             id,

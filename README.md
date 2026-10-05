@@ -9,8 +9,12 @@
 ### Pip <!-- / Conda -->
 
 ```
-pip install dash-draggable
+pip install dash-draggable-ng
 ```
+
+> **Note:** `dash-draggable-ng` is a modernized fork of `dash-draggable`
+> (Dash 4 / React 18, webpack 5). The Python import name is unchanged —
+> use `import dash_draggable` as before, so it is a drop-in replacement.
 
 **Note:** This library requires [dash](https://plotly.com/dash/).
 

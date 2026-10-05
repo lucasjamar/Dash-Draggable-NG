@@ -1,7 +1,7 @@
 {
   "name": "dash_draggable",
-  "version": "0.1.1a",
-  "description": "A Dash component for building draggable and resizable grid layouts. Based on the wel known react-grid-layout.",
+  "version": "0.2.0",
+  "description": "A Dash component for building draggable and resizable grid layouts. Based on the well known react-grid-layout.",
   "repository": {
     "type": "git",
     "url": "git://github.com/MehdiChelh/dash-draggable.git"
@@ -12,47 +12,44 @@
   "homepage": "https://github.com/MehdiChelh/dash-draggable",
   "main": "build/index.js",
   "scripts": {
-    "start": "webpack-serve --config ./webpack.serve.config.js --open",
+    "start": "webpack serve --config ./webpack.serve.config.js --open",
     "validate-init": "python _validate_init.py",
     "prepublishOnly": "npm run validate-init",
     "build:js": "webpack --mode production",
-    "build:py_and_r": "dash-generate-components ./src/lib/components dash_draggable -p package-info.json --r-prefix '' --jl-prefix ''",
-    "build:py_and_r-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py_and_r)",
-    "build": "npm run build:js && npm run build:py_and_r",
-    "build:activated": "npm run build:js && npm run build:py_and_r-activated"
+    "build:backends": "dash-generate-components ./src/lib/components dash_draggable -p package-info.json --ignore \\.test\\.",
+    "build": "npm run build:js && npm run build:backends"
   },
   "author": "Mehdi Echchelh <mehdi.echel@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "ramda": "^0.26.1",
-    "react-grid-layout": "^1.2.0"
+    "react-grid-layout": "^1.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
-    "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.2",
-    "babel-loader": "^8.0.6",
+    "@babel/core": "^7.22.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/preset-env": "^7.22.2",
+    "@babel/preset-react": "^7.22.3",
+    "@plotly/dash-component-plugins": "^1.2.3",
+    "@plotly/webpack-dash-dynamic-import": "^1.2.0",
+    "babel-loader": "^9.1.2",
     "copyfiles": "^2.1.1",
-    "css-loader": "^3.0.0",
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-react": "^7.14.2",
-    "npm": "^6.1.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-docgen": "^4.1.1",
-    "react-dom": "^16.8.6",
-    "styled-jsx": "^3.2.1",
-    "style-loader": "^0.23.1",
-    "webpack": "4.36.1",
-    "webpack-cli": "3.3.6",
-    "webpack-serve": "3.1.0"
+    "css-loader": "^6.8.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-docgen": "^5.4.3",
+    "react-dom": "^18.3.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
   },
   "engines": {
-    "node": ">=8.11.0",
-    "npm": ">=6.1.0"
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

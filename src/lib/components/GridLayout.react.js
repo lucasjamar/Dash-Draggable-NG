@@ -46,7 +46,8 @@ const defaultItemLayout = (item_layout, id, key, ncols, gridCols) => {
  * `Input("<my-id>", "layout")`.
  */
 export default class GridLayout extends Component {
-    componentWillMount() {
+    constructor(props) {
+        super(props);
         let {children = []} = this.props;
         const {
             id,
